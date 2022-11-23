@@ -1,4 +1,5 @@
 import React from "react";
+import './Card.css'
 
 function Card() {
   return (
@@ -10,16 +11,12 @@ function Card() {
           </span>
           <h3>GitHub</h3>
         </div>
-        <label className="toggle">
-          <input type="checkbox" defaultChecked />
-          <span />
-        </label>
       </div>
       <div className="card-body">
         <p>Link pull requests and automate workflows.</p>
       </div>
       <div className="card-footer">
-        <a href="#">View integration</a>
+        <a href="#">Visit Website</a>
       </div>
     </article>
   );

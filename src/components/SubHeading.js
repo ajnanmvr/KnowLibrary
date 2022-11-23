@@ -4,10 +4,9 @@ function SubHeading() {
   return (
     <div className="content-header">
     <div className="content-header-intro">
-      <h2>Intergrations and connected apps</h2>
+      <h2>Darul Huda Web Library</h2>
       <p>
-        Supercharge your workflow and connect the tool you use every
-        day.
+    Collection of Educational and Useful Websites
       </p>
     </div>
     <div className="content-header-actions">
@@ -17,7 +16,7 @@ function SubHeading() {
       </a>
       <a href="#" className="button">
         <i className="ph-plus-bold" />
-        <span>Request integration</span>
+        <span>Suggest Other</span>
       </a>
     </div>
   </div>  )

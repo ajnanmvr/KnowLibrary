@@ -1,0 +1,6 @@
+.card-body p {
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 3em;
+    line-height: 1.5em;
+  }

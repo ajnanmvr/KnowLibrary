@@ -26,9 +26,9 @@ function Header() {
             <a href="#" className="icon-button">
               <i className="ph-bell-bold" />
             </a>
-            <a href="#" className="avatar">
+            <a href="http://dhiu.in/"  target="_blank" title="Darul Huda Official Website" className="avatar">
               <img
-                src="https://avatars.githubusercontent.com/u/94433947?v=4"
+                src="https://upload.wikimedia.org/wikipedia/ml/f/f3/Dhiu_logo.jpg"
                 alt=""
               />
             </a>
