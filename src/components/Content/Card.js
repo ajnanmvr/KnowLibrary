@@ -1,25 +1,25 @@
-import React from "react";
-import './Card.css'
+import React from 'react';
+import './Card.css';
 
-function Card() {
+const Card = ({ card }) => {
   return (
     <article className="card">
       <div className="card-header">
         <div>
           <span>
-            <img src="https://assets.codepen.io/285131/github.svg" />
+            <img src={card.image} alt="Logo" />
           </span>
-          <h3>GitHub</h3>
+          <h3>{card.name}</h3>
         </div>
       </div>
       <div className="card-body">
-        <p>Link pull requests and automate workflows.</p>
+        <p>{card.description}</p>
       </div>
       <div className="card-footer">
-        <a href="#">Visit Website</a>
+        <a href={card.url}>Visit Website</a>
       </div>
     </article>
   );
-}
+};
 
 export default Card;

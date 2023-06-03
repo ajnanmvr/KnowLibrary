@@ -1,24 +1,30 @@
-import React from "react";
-import Card from "./Card";
-import SideBar from "./SideBar";
+import React, { useEffect, useState } from 'react';
+import axios from '../../axios';
+import Card from './Card';
+import SideBar from './SideBar'
 function Content() {
+  const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+    // Fetch data from the API using axios
+    axios.get('/data')
+      .then(response => {
+        setCards(response.data);
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, []);
+
   return (
     <div className="content">
       <SideBar />
       <div className="content-main">
         <div className="card-grid">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {cards.map((card) => (
+            <Card key={card._id} card={card} />
+          ))}
         </div>
       </div>
     </div>

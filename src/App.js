@@ -1,17 +1,21 @@
-import Content from "./components/Content/Content";
-import Header from "./components/Header/Header";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import AdminLogin from "./components/Admin/AdminLogin";
+import Home from "./components/Home/Home";
 
-import SubHeading from "./components/SubHeading";
+
 function App() {
   return (
-    <div>
-      <Header />
-      <div className="responsive-wrapper">
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
+        {/* Other routes */}
+        
+      </Routes>
+    </Router>
 
-        <SubHeading />
-        <Content />
-      </div>
-    </div>
   );
 }
+
 export default App;

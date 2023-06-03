@@ -1,0 +1,32 @@
+.admin-login-container {
+    background: var(--c-background-primary);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .admin-login-heading {
+    color: var(--c-text-primary);
+    margin-bottom: 20px;
+  }
+  
+  .admin-login-label {
+    color: var(--c-text-secondary);
+  }
+  
+  .admin-login-input {
+    border: 1px solid var(--c-border-primary);
+    border-radius: 3px;
+    padding: 5px;
+  }
+  
+  .admin-login-button {
+    background: var(--c-accent-primary);
+    color: var(--c-background-primary);
+    border: none;
+    border-radius: 3px;
+    padding: 8px 16px;
+  }
+  

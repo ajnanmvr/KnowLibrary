@@ -10,7 +10,8 @@ function Header() {
             <div>
               <img src="https://assets.codepen.io/285131/untitled-ui-icon.svg" />
             </div>
-            <img src="https://assets.codepen.io/285131/untitled-ui.svg" />
+            {/* <img src="https://assets.codepen.io/285131/untitled-ui.svg" /> */}
+            <h1>KnowLibrary</h1>
           </a>
         </div>
         <div className="header-navigation">
