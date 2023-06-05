@@ -9,8 +9,7 @@ function Content() {
     // Fetch data from the API using axios
     axios.get('/data')
       .then(response => {
-        setCards(response.data);
-        console.log(response.data);
+        setCards(response.data.data);
       })
       .catch(error => {
         console.error(error);

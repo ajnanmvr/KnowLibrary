@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Axios from '../../axios';
-import './AddProduct.css'
+import './AddProduct.css';
+
 const FormComponent = () => {
   const [name, setName] = useState('');
   const [image, setImage] = useState('');
@@ -15,7 +16,7 @@ const FormComponent = () => {
       name,
       image,
       description,
-      url
+      url,
     };
 
     try {
@@ -56,29 +57,32 @@ const FormComponent = () => {
   };
 
   return (
-<form className="form-container" onSubmit={handleSubmit}>
-<label>
+  <div className='addItem'>
+  <h1 className="form-header-addproduct">Add New Website</h1>
+      <form className="form-container" onSubmit={handleSubmit}>
+      <label>
         Name:
-        <input type="text" name="name" value={name} onChange={handleInputChange} />
+        <input type="text" name="name" value={name} onChange={handleInputChange} placeholder="Enter name" />
       </label>
       <br />
       <label>
         Image:
-        <input type="text" name="image" value={image} onChange={handleInputChange} />
+        <input type="text" name="image" value={image} onChange={handleInputChange} placeholder="Enter image URL" />
       </label>
       <br />
       <label>
         Description:
-        <input type="text" name="description" value={description} onChange={handleInputChange} />
+        <input type="text" name="description" value={description} onChange={handleInputChange} placeholder="Enter description" />
       </label>
       <br />
       <label>
         URL:
-        <input type="text" name="url" value={url} onChange={handleInputChange} />
+        <input type="text" name="url" value={url} onChange={handleInputChange} placeholder="Enter URL" />
       </label>
       <br />
       <button type="submit">Submit</button>
-    </form>
+    </form></div>
+
   );
 };
 
