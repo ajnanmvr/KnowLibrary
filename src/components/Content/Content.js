@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from '../../axios';
 import Card from './Card';
-import SideBar from './SideBar'
+import SideBar from './SideBar';
+
 function Content() {
   const [cards, setCards] = useState([]);
 
@@ -10,6 +11,7 @@ function Content() {
     axios.get('/data')
       .then(response => {
         setCards(response.data.data);
+        console.log(response.data.data);
       })
       .catch(error => {
         console.error(error);
@@ -21,9 +23,13 @@ function Content() {
       <SideBar />
       <div className="content-main">
         <div className="card-grid">
-          {cards.map((card) => (
-            <Card key={card._id} card={card} />
-          ))}
+          {cards.length > 0 ? (
+            cards.map((card) => (
+              <Card key={card._id} card={card} />
+            ))
+          ) : (
+            <p>Loading data..</p>
+          )}
         </div>
       </div>
     </div>

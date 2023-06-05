@@ -2,7 +2,7 @@ import axios from "axios";
 
 const Axios = axios.create({
 // baseURL: "",
-baseURL: "https://knowlib.vercel.app/",
+baseURL: "https://knowlib-backend.vercel.app/",
   headers: {
     "Content-Type": "application/json",
     "Access-Control-Allow-Origin": "*",
