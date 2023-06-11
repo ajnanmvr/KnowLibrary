@@ -30,7 +30,7 @@ height: 100vh;
   color: var(--c-text-primary);
 }
 
-.form-container input[type="text"] {
+.form-container input[type="text"] ,.form-container input[type="url"] {
   width: 100%;
   padding: 10px;
   border: 1px solid var(--c-border-primary);
@@ -54,4 +54,15 @@ height: 100vh;
   background-color: var( --c-text-action);
 
 
+}
+.error-message {
+  color: red;
+  font-weight: 700;
+  margin-top: 5px;
+  text-align: center;
+}.success-message {
+  color: green;
+  font-weight: 700;
+  margin-top: 5px;
+  text-align: center;
 }
