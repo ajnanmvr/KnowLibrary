@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Axios from "../../axios";
-import "./AddProduct.css";
 
 const FormComponent = () => {
   const [name, setName] = useState("");

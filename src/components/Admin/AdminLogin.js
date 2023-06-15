@@ -1,75 +1,41 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Axios from '../../axios'
-import "./AdminLogin.css";
+import React, { useState } from 'react';
+import axios from '../../axios';
 
-function AdminLogin() {
-  const navigate = useNavigate();
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+const LoginForm = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
-  const handleLogin = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+
     try {
-      const response = await Axios.post("/login", {
-        username,
-        password: "dhiucmd",
-      });
-  
-      if (response.status === 200) {
-        // Admin login successful
-        navigate("/admin");
-      } else {
-        // Invalid credentials
-        setError("Invalid username or password");
-      }
+      // Send a POST request to the backend sign-in endpoint
+      const response = await axios.post('/login', { username, password });
+      
+      // Display success message
+      console.log(response.data.message);
     } catch (error) {
-      // Handle error
-      setError("An error occurred. Please try again later.");
+      // Display error message
+      setError(error.response.data.error);
     }
   };
-  
-  
 
   return (
-    <div className="admin-login-container">
-      <h2 className="admin-login-heading">Admin Login</h2>
-      <form>
-        <div className="admin-login-field">
-          <label htmlFor="username" className="admin-login-label">
-            Username:
-          </label>
-          <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            className="admin-login-input"
-          />
-        </div>
-        <div className="admin-login-field">
-          <label htmlFor="password" className="admin-login-label">
-            Password:
-          </label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="admin-login-input"
-          />
-        </div>
-        <button
-          type="button"
-          onClick={handleLogin}
-          className="admin-login-button"
-        >
-          Login
-        </button>
-        {error && <p>{error}</p>}
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      {error && <div className="error">{error}</div>}
+      <div>
+        <label>Username:</label>
+        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+      </div>
+      <div>
+        <label>Password:</label>
+        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+      </div>
+      <button type="submit">Sign In</button>
+    </form>
   );
-}
+};
 
-export default AdminLogin;
+export default LoginForm;
