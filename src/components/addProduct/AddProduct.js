@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Axios from "../../axios";
+import Axios from "../../Axios";
 
 const FormComponent = () => {
   const [name, setName] = useState("");
